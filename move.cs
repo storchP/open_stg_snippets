@@ -1,3 +1,7 @@
+// JA：
+// 自機の操作と弾の発射。
+// 弾はプレハブで生成しているので別途プレハブを用意すること
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +9,7 @@ using UnityEngine;
 public class gc_move : MonoBehaviour {
 
 	// ビームガン等のプレハブ呼び出しを宣言する
-	// todo:装備変更時はxxPrefabなど別変数も必要？
+	// 装備変更時はxxPrefabなど別変数も必要
 	public GameObject Prefab;
  	float intervalTime;
 
@@ -33,7 +37,7 @@ public class gc_move : MonoBehaviour {
 		}
 
 		// 荷電粒子砲(弾)を発射
-    // ※弾はプレハブで生成し、弾の移動や着弾、消滅はプレハブ側で処理しています。
+		// ※弾はプレハブで生成し、弾の移動や着弾、消滅はプレハブ側で処理しています。
 		intervalTime += Time.deltaTime;
 		if (Input.GetKey("space")) {
 			if (intervalTime >= 0.1f) {
